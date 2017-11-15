@@ -5,7 +5,7 @@
 // Login   <maxime.lacroix@epitech.eu>
 // 
 // Started on  Tue Nov 14 13:22:43 2017 ze
-// Last update Tue Nov 14 14:07:10 2017 ze
+// Last update Wed Nov 15 14:43:47 2017 ze
 //
 
 #ifndef  __MAIN_HPP__
@@ -18,8 +18,9 @@
 # include <vector>
 
 # include "Exception.hpp"
+# include "Data.hpp"
 
-std::vector<std::string> checks(const char *filename, std::vector<std::string> &stock);
+void			 checks(const char *filename, std::vector<std::string> &stock);
 void			 launch(std::vector<std::string> &file);
 
 #endif /* ! __MAIN_HPP__ */

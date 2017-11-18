@@ -5,7 +5,7 @@
 // Login   <maxime.lacroix@epitech.eu>
 // 
 // Started on  Tue Nov 14 13:31:13 2017 ze
-// Last update Wed Nov 15 22:00:02 2017 ze
+// Last update Sat Nov 18 21:47:39 2017 DESKTOP-FQFT07H
 //
 
 #include "Main.hpp"
@@ -25,18 +25,51 @@ void checks(const char *filename, std::vector<std::string> &stock)
   file.close();
 }
 
-
-void			sort(std::vector<std::string> &file)
+bool			is_sorted(std::vector<Data> &dataguys)
 {
-  std::vector<Data>	dataguys; //table of objects containing parsed information of everyline
+  for (size_t x = 0; x < dataguys.size(); x++)
+    {
+      if (x + 1 <= dataguys.size())
+	if (dataguys[x + 1].getPriority() < dataguys[x].getPriority())
+	  return (false);
+    }
+  return (true);
+}
+
+std::vector<Data>			sort(std::vector<std::string> &file)
+{
+  std::vector<Data>	dataguys;
+  Data			swap;
   
   for (size_t x = 0; x < file.size(); x++)
-    dataguys.push_back(Data(file[x]));
+    {
+      dataguys.push_back(Data(file[x]));
+      dataguys[x].Print();
+    }
+  std::cout << std::endl;
+  while (!is_sorted(dataguys))
+    {
+      for (size_t x = 0; x < dataguys.size(); x++)
+	{
+	  if (x + 1 <= dataguys.size())
+	    if (dataguys[x + 1].getPriority() < dataguys[x].getPriority())
+	      {
+		//		(&swap)->~Data();
+		//new (&swap) Data(dataguys[x+1]);
+		swap = dataguys[x+1];
+		dataguys[x+1] = dataguys[x];
+		//		dataguys[x].Switch(swap);
+		dataguys[x] = swap;
+	      }
+	}
+    }
+  for (size_t x = 0; x < dataguys.size(); x++)
+    dataguys[x].Print();
+  return (dataguys);
 }
-  
-  
-}
-void			launch(std::vector<std::string> &file)
+
+void					launch(std::vector<std::string> &file)
 {
   sort(file);
+  std::cout << "File is sorted" << std::endl;
 }

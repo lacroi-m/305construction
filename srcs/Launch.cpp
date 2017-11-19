@@ -27,7 +27,7 @@ void checks(const char *filename, std::vector<std::string> &stock)
 
 bool			is_sorted(std::vector<Data> &dataguys)
 {
-  for (size_t x = 0; x < dataguys.size(); x++)
+  for (size_t x = 0; x < dataguys.size() - 1; x++)
     {
       if (x + 1 <= dataguys.size())
 	if (dataguys[x + 1].getPriority() < dataguys[x].getPriority())
@@ -42,26 +42,19 @@ std::vector<Data>			sort(std::vector<std::string> &file)
   Data			swap;
   
   for (size_t x = 0; x < file.size(); x++)
-    {
       dataguys.push_back(Data(file[x]));
-      dataguys[x].Print();
-    }
-  std::cout << std::endl;
   while (!is_sorted(dataguys))
     {
-      for (size_t x = 0; x < dataguys.size(); x++)
-	{
-	  if (x + 1 <= dataguys.size())
-	    if (dataguys[x + 1].getPriority() < dataguys[x].getPriority())
-	      {
-		//		(&swap)->~Data();
-		//new (&swap) Data(dataguys[x+1]);
-		swap = dataguys[x+1];
-		dataguys[x+1] = dataguys[x];
-		//		dataguys[x].Switch(swap);
-		dataguys[x] = swap;
-	      }
-	}
+      for (size_t x = 0; x < dataguys.size() - 1; x++)
+      	{
+	         if (x + 1 <= dataguys.size())
+	           if (dataguys[x + 1].getPriority() < dataguys[x].getPriority())
+        	      {
+		              swap = dataguys[x+1];
+		              dataguys[x+1] = dataguys[x];
+		              dataguys[x] = swap;
+        	      }
+      	}
     }
   for (size_t x = 0; x < dataguys.size(); x++)
     dataguys[x].Print();

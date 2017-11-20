@@ -5,7 +5,7 @@
 // Login   <maxime.lacroix@epitech.eu>
 // 
 // Started on  Wed Nov 15 14:25:23 2017 ze
-// Last update Sat Nov 18 21:43:39 2017 DESKTOP-FQFT07H
+// Last update Mon Nov 20 11:15:24 2017 DESKTOP-FQFT07H
 //
 
 #include "Main.hpp"
@@ -72,9 +72,29 @@ void	Data::Switch(const Data &cpy)
   _pre = cpy._pre;
 }
 
-size_t	Data::getPriority()
+std::string			Data::getCode()
 {
-  return (_pre.size());
+  return (_code);
+}
+
+std::string			Data::getDesc()
+{
+  return (_description);
+}
+
+int				Data::getTime()
+{
+  return (_time);
+}
+
+std::vector<std::string>	Data::getPre()
+{
+  return (_pre);
+}
+
+size_t				Data::getPreSize()
+{
+  return (this->_pre.size());
 }
 
 void	Data::Print()
@@ -87,5 +107,8 @@ void	Data::Print()
   for (size_t x = 0; x < _pre.size(); x++)
     std::cout << "'" <<_pre[x] << "'" << std::endl;
     std::cout << std::endl;*/
-  std::cout << _pre.size() <<  " " << _code << " " << _description << std::endl;
+  std::cout << _pre.size() <<  " " << _code << " " << _description << " ";
+  for (size_t x = 0; x < _pre.size(); x++)
+    std::cout << _pre[x] << " ";
+  std::cout << std::endl;
 }

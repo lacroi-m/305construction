@@ -20,7 +20,8 @@
 # include "Exception.hpp"
 # include "Data.hpp"
 
-void			 checks(const char *filename, std::vector<std::string> &stock);
-void			 launch(std::vector<std::string> &file);
+void						 checks(const char *filename, std::vector<std::string> &stock);
+void						 launch(std::vector<std::string> &file);
+std::vector<Data>			 sort(std::vector<std::string> &file);
 
 #endif /* ! __MAIN_HPP__ */

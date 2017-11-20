@@ -5,7 +5,7 @@
 // Login   <maxime.lacroix@epitech.eu>
 // 
 // Started on  Wed Nov 15 14:25:23 2017 ze
-// Last update Mon Nov 20 11:15:24 2017 DESKTOP-FQFT07H
+// Last update Mon Nov 20 13:39:57 2017 DESKTOP-FQFT07H
 //
 
 #include "Main.hpp"
@@ -110,5 +110,6 @@ void	Data::Print()
   std::cout << _pre.size() <<  " " << _code << " " << _description << " ";
   for (size_t x = 0; x < _pre.size(); x++)
     std::cout << _pre[x] << " ";
+  std::cout << _time;
   std::cout << std::endl;
 }

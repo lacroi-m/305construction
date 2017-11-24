@@ -1,27 +1,23 @@
 //
-// Main.hpp for  in /home/ze/305construction
+// Main.hpp for  in /home/kopiz/Workplace/MATHS/mine/incs
 // 
-// Made by ze
-// Login   <maxime.lacroix@epitech.eu>
+// Made by Tom Jeammet
+// Login   <tom.jeammet@epitech.eu>
 // 
-// Started on  Tue Nov 14 13:22:43 2017 ze
-// Last update Wed Nov 15 14:43:47 2017 ze
+// Started on  Tue Nov 21 16:41:42 2017 Tom Jeammet
+// Last update Fri Nov 24 13:39:26 2017 Tom Jeammet
 //
 
 #ifndef  __MAIN_HPP__
 # define  __MAIN_HPP__
 
 # include <iostream>
-# include <string>
-# include <cstring>
 # include <fstream>
 # include <vector>
 
 # include "Exception.hpp"
-# include "Data.hpp"
-
-void						 checks(const char *filename, std::vector<std::string> &stock);
-void						 launch(std::vector<std::string> &file);
-std::vector<Data>			 sort(std::vector<std::string> &file);
+# include "Step.hpp"
+# include "Builder.hpp"
+# include "Timer.hpp"
 
 #endif /* ! __MAIN_HPP__ */
